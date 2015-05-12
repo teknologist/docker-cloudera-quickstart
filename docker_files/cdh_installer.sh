@@ -1,6 +1,6 @@
 #!/bin/bash
 DEBIAN_FRONTEND=noninteractive apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y -q openjdk-7-jre-headless wget dialog curl sudo lsof vim axel telnet
+DEBIAN_FRONTEND=noninteractive apt-get install -y -q wget dialog curl sudo lsof vim axel telnet
 
 if [ -f /tmp/install_cloudera_repositories.sh ]; then
     . /tmp/install_cloudera_repositories.sh

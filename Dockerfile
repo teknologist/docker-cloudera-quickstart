@@ -1,7 +1,17 @@
 # VERSION   0.1
 
 FROM ubuntu:14.04
-MAINTAINER Caio Quirino <caioquirino@caioquirino.com.br>
+MAINTAINER The Teknologist <teknologist@gmail.com>
+
+RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends software-properties-common && \
+    add-apt-repository ppa:webupd8team/java && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends oracle-java7-installer=7u80+7u60arm-0~webupd8~0 oracle-java7-set-default
+
 
 ADD docker_files/cdh_installer.sh /tmp/cdh_installer.sh
 ADD docker_files/install_cloudera_repositories.sh /tmp/install_cloudera_repositories.sh
