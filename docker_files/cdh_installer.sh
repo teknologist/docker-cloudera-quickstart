@@ -45,7 +45,7 @@ sudo -u hdfs hdfs dfs -chown hbase /hbase
 
 #CDH5-Installation-Guide Install HBase
 echo "Install Cloudera Components"
-DEBIAN_FRONTEND=noninteractive apt-get -y install hive hbase hbase-thrift hbase-master pig hue oozie oozie-client spark-core spark-master spark-worker spark-history-server spark-python
+DEBIAN_FRONTEND=noninteractive apt-get -y install hive hbase hbase-thrift hbase-master pig hue oozie oozie-client spark-core spark-master spark-worker spark-history-server spark-python cloudera-manager-daemons cloudera-manager-server cloudera-manager-server-db cloudera-manager-agent 
 
 #Configure Oozie
 update-alternatives --set oozie-tomcat-conf /etc/oozie/tomcat-conf.http
@@ -66,5 +66,7 @@ sudo -u hdfs hadoop fs -chown solr /solr
 mv /etc/default/solr.docker /etc/default/solr
 service hbase-master start
 solrctl init
+service cloudera-scm-server-db start
+service cloudera-scm-server start
 
 

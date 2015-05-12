@@ -11,6 +11,7 @@ ADD docker_files/cloudera.pref /etc/apt/preferences.d/cloudera.pref
 ADD docker_files/hadoop-env.sh /etc/profile.d/hadoop-env.sh
 ADD docker_files/spark-env.sh /etc/profile.d/spark-env.sh
 ADD docker_files/spark-defaults.conf /etc/spark/conf/spark-defaults.conf
+ADD docker_files/cloudera-scm-agent-config.ini /etc/cloudera-scm-agent/config.ini
 
 
 ENV TERM xterm
@@ -31,6 +32,7 @@ EXPOSE 11443:11443
 EXPOSE 9090:9090
 EXPOSE 8088:8088
 EXPOSE 19888:19888
+EXPOSE 7180:7180
 
 # private only
 #EXPOSE 80
