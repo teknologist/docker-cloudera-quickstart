@@ -21,7 +21,7 @@ ADD docker_files/cloudera.pref /etc/apt/preferences.d/cloudera.pref
 ADD docker_files/hadoop-env.sh /etc/profile.d/hadoop-env.sh
 ADD docker_files/spark-env.sh /etc/profile.d/spark-env.sh
 ADD docker_files/spark-defaults.conf /etc/spark/conf/spark-defaults.conf
-ADD docker_files/cloudera-scm-agent-config.ini /etc/cloudera-scm-agent/config.ini
+#ADD docker_files/cloudera-scm-agent-config.ini /etc/cloudera-scm-agent/config.ini
 
 
 ENV TERM xterm
